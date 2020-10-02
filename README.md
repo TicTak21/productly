@@ -4,4 +4,4 @@
 
 [Live demo](https://tictak21.github.io/productly/)
 
-![Productly-Preview](./img/productly_preview_img.png)
+![Productly-Preview](./img/productly_preview-img.png)
