@@ -1,0 +1,106 @@
+@import './mixins';
+
+// === classes ===
+.btn {
+  @include btn-reset();
+
+  white-space: nowrap;
+
+  &-primary {
+    border: none;
+    background-color: $color-orange;
+    color: $color-white;
+  }
+
+  &-flat {
+    background-color: transparent;
+    color: $color-darkblue;
+    border: 0.0625rem solid $color-lightgray;
+  }
+
+  &-transparent {
+    background-color: transparent;
+    color: $color-orange;
+    border: none;
+    text-decoration: underline;
+
+    &--play {
+      display: flex;
+      place-items: center;
+    }
+  }
+}
+
+.section {
+  &-title {
+    @include font-weight-bold();
+
+    font-size: 2.75rem;
+    line-height: 3.375rem;
+
+    &--mt {
+      margin-top: 0.25em;
+    }
+  }
+
+  &-par {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+
+    &--mt {
+      margin-top: 1.5em;
+    }
+  }
+}
+
+.arrow {
+  display: block;
+  width: 0px;
+  height: 0px;
+  border: 8px solid transparent;
+  border-left-color: $color-orange;
+}
+
+.section-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6.25rem;
+  flex-wrap: wrap;
+
+  & > * {
+    flex-basis: 40%;
+
+    @media screen and (max-width: 860px) {
+      flex-basis: 100%;
+    }
+  }
+}
+
+.subsection {
+  font-size: 1rem;
+  line-height: 1.625rem;
+
+  &-title {
+    @include font-weight-bold();
+
+    margin-top: 2em;
+  }
+
+  &-text {
+    margin-top: 1.25em;
+  }
+}
+
+.footer-title {
+  @include font-weight-bold();
+
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+}
+
+.icon {
+  min-width: initial;
+  width: inherit;
+}
+// === / classes ===

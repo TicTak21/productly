@@ -1,0 +1,23 @@
+// === variables ===
+
+// = colors =
+$color-black: #000000;
+$color-white: #ffffff;
+$color-whitesmoke: #f2f2f2;
+$color-orange: #ff9900;
+$color-darkblue: #173a56;
+$color-grayblue: #567592;
+$color-skyblue: #bcd0e5;
+$color-lightblue: rgba(
+  $color: $color-skyblue,
+  $alpha: 0.5,
+);
+$color-lightgray: #d8d8d8;
+
+// = transition =
+$transition-03: 0.3s ease-in-out;
+
+// = sizes =
+// 100% = 1400px, padding = 145px each side
+$section-outer-padding-x: 8%;
+// === / variables ===

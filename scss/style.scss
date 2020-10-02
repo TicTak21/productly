@@ -1,0 +1,386 @@
+@import './_normalize';
+@import './_mixins';
+@import './_variables';
+@import './classes';
+
+// === common ===
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @include font-primary();
+
+  background-color: $color-whitesmoke;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  min-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+.section-outer {
+  padding-left: $section-outer-padding-x;
+  padding-right: $section-outer-padding-x;
+}
+
+.section-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+// === / common ===
+
+// === header ===
+.section-header {
+  $section-header-margin-y: 2em;
+
+  margin-top: $section-header-margin-y;
+  margin-bottom: $section-header-margin-y;
+
+  .section-inner {
+    $section-inner-padding-y: 1em;
+
+    padding-top: $section-inner-padding-y;
+    padding-bottom: $section-inner-padding-y;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    flex-wrap: wrap;
+  }
+
+  &__logo {
+    flex-grow: 1;
+  }
+
+  &__nav {
+    overflow-x: scroll;
+
+    &-list {
+      display: flex;
+      gap: 1em;
+
+      li {
+        @include list-reset();
+
+        a {
+          @include nav-link();
+        }
+      }
+    }
+  }
+
+  &__auth {
+    display: flex;
+    gap: 1em;
+  }
+}
+// === / header ===
+
+// === design ===
+.section-design {
+  margin-top: 1em;
+  margin-bottom: 6.8em;
+
+  .section-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+    flex-wrap: wrap;
+
+    & > * {
+      flex-basis: 40%;
+    }
+  }
+
+  &__promo {
+    &-desc {
+      margin-top: 2em;
+    }
+
+    &-ctrl {
+      display: flex;
+      place-items: center;
+      gap: 0.5em;
+      margin-top: 3em;
+    }
+  }
+}
+// === / design ===
+
+// === superpowers ===
+.section-superpowers {
+  @include section-rounded-shadow(180deg, 100%);
+
+  position: relative;
+  margin-top: 6.8em;
+  margin-bottom: 12.5em; // extra margin for shadow(default = 5.5em)
+
+  &__title {
+    text-align: center;
+    width: 50%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.8em;
+    flex-wrap: wrap;
+    margin-top: 3.5em;
+
+    &-item {
+      flex-basis: 240px;
+
+      &__title {
+        @include font-weight-semibold();
+
+        margin-top: 2em;
+        font-size: 1.375rem;
+      }
+
+      &__desc {
+        margin-top: 1em;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__sign-up {
+    margin-top: 3em;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 860px) {
+    &__title {
+      width: 100%;
+    }
+
+    &__list {
+      justify-content: center;
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  }
+}
+// === / superpowers ===
+
+// === professionals ===
+.section-professionals {
+  margin-top: 7.5em;
+  margin-bottom: 6.25em;
+}
+// === / professionals ===
+
+// === managers ===
+.section-managers {
+  margin-top: 7.5em;
+  margin-bottom: 6.25em;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+    gap: 2em;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 2em;
+
+      &__text {
+        flex-basis: 365px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 860px) {
+    &__promo {
+      order: -1;
+    }
+  }
+}
+// === / managers ===
+
+// === marketers ===
+.section-marketers {
+  margin-top: 7.5em;
+  margin-bottom: 6.25em;
+}
+// === / marketers ===
+
+// === experts ===
+.section-experts {
+  @include section-rounded-shadow(0deg, 0%);
+
+  padding-top: 7em;
+  margin-bottom: 8.5rem;
+
+  &__title,
+  &__desc,
+  &__contact {
+    text-align: center;
+  }
+
+  &__desc {
+    margin: 0 auto;
+    margin-top: 1.5em;
+    width: 50%;
+    color: $color-grayblue;
+  }
+
+  &__contact {
+    margin-top: 3em;
+  }
+
+  @media screen and (max-width: 860px) {
+    &__desc {
+      width: 100%;
+    }
+  }
+}
+// === / experts ===
+
+// === strategies ===
+.section-strategies {
+  margin-top: 7.5em;
+  margin-bottom: 7.5em;
+
+  &__desc {
+    margin-top: 1em;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 3.5em;
+    gap: 2.5em;
+
+    &-item {
+      flex-basis: 348px;
+
+      &__info {
+        margin-top: 1.5em;
+      }
+
+      &__title {
+        @include font-weight-bold();
+
+        margin-top: 1em;
+        font-size: 1.5rem;
+        line-height: 2.125rem;
+
+        &--active {
+          color: $color-orange;
+        }
+      }
+    }
+  }
+
+  &__ctrl {
+    margin-top: 2.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625em;
+
+    &-item {
+      background-color: $color-lightgray;
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      transition: $transition-03;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-orange;
+      }
+
+      &--active {
+        background-color: $color-orange;
+      }
+    }
+  }
+}
+// === / strategies ===
+
+// === footer ===
+.section-footer {
+  margin-bottom: 6.25em;
+
+  .section-inner {
+    padding-top: 6.25em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6em;
+    border-top: 0.0625rem solid $color-lightblue;
+
+    & > * {
+      flex: 1;
+    }
+  }
+
+  &__links,
+  &__stuff {
+    &-list {
+      margin-top: 2em;
+
+      li {
+        @include list-reset();
+
+        a {
+          @include nav-link();
+        }
+      }
+    }
+  }
+
+  &__feedback {
+    min-width: 320px;
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &__phone {
+        margin-top: 2em;
+
+        input {
+          @include input-reset();
+
+          padding: 0.625em 0.95rem;
+        }
+      }
+
+      &__sign-up {
+        margin-top: 2em;
+      }
+    }
+  }
+}
+// === / footer ===
