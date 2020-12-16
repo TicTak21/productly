@@ -86,6 +86,12 @@ img {
     display: flex;
     gap: 1em;
   }
+
+  @media screen and (max-width: 860px) {
+    .section-inner {
+      flex-direction: column;
+    }
+  }
 }
 // === / header ===
 
@@ -328,10 +334,9 @@ img {
 
 // === footer ===
 .section-footer {
-  margin-bottom: 6.25em;
-
   .section-inner {
     padding-top: 6.25em;
+    padding-bottom: 6.25em;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
